@@ -1,0 +1,89 @@
+syntax = "proto3";
+
+option go_package ="./bff";
+
+package ecommerce;
+
+// ------------------------------------ 
+// Messages
+// ------------------------------------ 
+
+//--------------------------------users--------------------------------
+message Users {
+  int64 id = 1; //id
+  int64 createdAt = 2; //createdAt
+  int64 updatedAt = 3; //updatedAt
+  int64 deletedAt = 4; //deletedAt
+  string userName = 5; //用户账号
+  string password = 6; //密码
+}
+
+message AddUsersReq {
+  int64 createdAt = 1; //createdAt
+  int64 updatedAt = 2; //updatedAt
+  int64 deletedAt = 3; //deletedAt
+  string userName = 4; //用户账号
+  string password = 5; //密码
+}
+
+message AddUsersResp {
+}
+
+message UpdateUsersReq {
+  int64 id = 1; //id
+  int64 createdAt = 2; //createdAt
+  int64 updatedAt = 3; //updatedAt
+  int64 deletedAt = 4; //deletedAt
+  string userName = 5; //用户账号
+  string password = 6; //密码
+}
+
+message UpdateUsersResp {
+}
+
+message DelUsersReq {
+  int64 id = 1; //id
+}
+
+message DelUsersResp {
+}
+
+message GetUsersByIdReq {
+  int64 id = 1; //id
+}
+
+message GetUsersByIdResp {
+  Users users = 1; //users
+}
+
+message SearchUsersReq {
+  int64 page = 1; //page
+  int64 limit = 2; //limit
+  int64 id = 3; //id
+  int64 createdAt = 4; //createdAt
+  int64 updatedAt = 5; //updatedAt
+  int64 deletedAt = 6; //deletedAt
+  string userName = 7; //用户账号
+  string password = 8; //密码
+}
+
+message SearchUsersResp {
+  repeated Users users = 1; //users
+}
+
+
+
+// ------------------------------------ 
+// Rpc Func
+// ------------------------------------ 
+
+service EcommerceService{ 
+
+	 //-----------------------users----------------------- 
+	 rpc AddUsers(AddUsersReq) returns (AddUsersResp); 
+	 rpc UpdateUsers(UpdateUsersReq) returns (UpdateUsersResp); 
+	 rpc DelUsers(DelUsersReq) returns (DelUsersResp); 
+	 rpc GetUsersById(GetUsersByIdReq) returns (GetUsersByIdResp); 
+	 rpc SearchUsers(SearchUsersReq) returns (SearchUsersResp); 
+
+}

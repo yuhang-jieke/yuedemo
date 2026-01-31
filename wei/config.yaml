@@ -1,0 +1,29 @@
+Nacos:
+  Host: "115.190.57.118"
+  Port: 8848
+  NamespaceId: "public"
+  DataId: "user-server"
+  Group: "DEFAULT_GROUP"
+Mysql:
+  Ip: "115.190.57.118"
+  Port: 3306
+  User: "root"
+  Password: "4ay1nkal3u8ed77y"
+  Db: "week3"
+Redis:
+  Addr: "115.190.57.118:6379"
+  Db: 0
+  Password: "4ay1nkal3u8ed77y"
+  MaxIdle: 20
+  PoolSize: 10
+
+Log:
+  Level: "debug"
+  Path: "./logs/app.log"
+  MaxSize: 100
+  MaxBackups: 10
+  MaxAge: 7
+  Compress: "true"
+  Format: "console"
+  ConsoleEnable: "true"
+

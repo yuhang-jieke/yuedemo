@@ -1,0 +1,1 @@
+2026-01-30T15:53:46.062+0800	[34mINFO[0m	middleware/middleware.go:23	鉴权成功-全量请求日志	{"user_id": "1", "req_time": "2026-01-30T15:53:46.062+0800", "path": "/update", "req_param": "string(body)", "resp_data": " resp.body.String()", "tokenPre": "token"}

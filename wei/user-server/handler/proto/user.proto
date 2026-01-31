@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = "./";
+
+message RegisterReq {
+  string name = 1;
+  int64 age =2;
+  string address =3;
+}
+
+message RegisterResp {
+  string greet = 1;
+}
+message UpdateReq {
+  int64 Id =1;
+  string address =2;
+  int64 userId =3;
+}
+message UpdateResp {
+  string greet = 1;
+}
+message LoginReq {
+  string name = 1;
+  int64 age =2;
+}
+
+message LoginResp {
+  string greet = 1;
+  int64 userId =2;
+}
+service User {
+  rpc Register(RegisterReq) returns (RegisterResp);
+  rpc Update(UpdateReq) returns (UpdateResp);
+  rpc Login(LoginReq) returns (LoginResp);
+}
